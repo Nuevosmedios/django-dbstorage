@@ -26,7 +26,7 @@ class FileManager(models.Manager):
 class File(models.Model):
     """Model for treating rows in the database as file streams."""
 
-    name = models.CharField(max_length=getattr(settings, 'PATH_MAX', 100),
+    name = models.CharField(max_length=getattr(settings, 'PATH_MAX', 200),
                             primary_key=True, editable=False)
     data = Base64Field(blank=True, editable=False)
     size = models.PositiveIntegerField(editable=False)
